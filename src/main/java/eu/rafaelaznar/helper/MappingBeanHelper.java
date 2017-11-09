@@ -28,7 +28,7 @@
  */
 package eu.rafaelaznar.helper;
 
-import eu.rafaelaznar.bean.CarritoBean;
+import eu.rafaelaznar.bean.specificimplementation.CarritoBean;
 import eu.rafaelaznar.bean.specificimplementation.TipousuarioSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.UsuarioSpecificBeanImplementation;
 import eu.rafaelaznar.bean.publicinterface.GenericBeanInterface;

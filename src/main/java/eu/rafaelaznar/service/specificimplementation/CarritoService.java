@@ -6,7 +6,7 @@
 package eu.rafaelaznar.service.specificimplementation;
 
 import com.google.gson.Gson;
-import eu.rafaelaznar.bean.CarritoBean;
+import eu.rafaelaznar.bean.specificimplementation.CarritoBean;
 import eu.rafaelaznar.bean.ReplyBean;
 import eu.rafaelaznar.bean.specificimplementation.LineapedidoSpecificBeanImplementation;
 import eu.rafaelaznar.bean.specificimplementation.PedidoSpecificBeanImplementation;

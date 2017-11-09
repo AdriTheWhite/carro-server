@@ -26,6 +26,8 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
     private Date fecha;
     @Expose
     private Integer iva;
+    @Expose
+    private Boolean tiene_iva;
     @Expose(serialize = false)
     private Integer id_usuario=0;
     @Expose(deserialize = false)
@@ -84,13 +86,16 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
         this.obj_usuario = obj_usuario;
     }
     
+    
+    
     @Override
     public String getColumns() {
         String strColumns = "";
         strColumns += "id,";
         strColumns += "fecha,";
         strColumns += "iva,";
-        strColumns += "id_usuario";
+        strColumns += "id_usuario,";
+        strColumns += "tiene_iva";
         return strColumns;
     }
 
@@ -100,7 +105,8 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
         strColumns += id + ",";
         strColumns += EncodingUtilHelper.stringifyAndQuotate(fecha) + ",";
         strColumns += iva + ",";
-        strColumns += id_usuario;
+        strColumns += id_usuario + ",";
+        strColumns += tiene_iva;
         return strColumns;
     }
 
@@ -109,7 +115,8 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
         String strPairs = "";
         strPairs += "fecha=" + EncodingUtilHelper.stringifyAndQuotate(fecha) + ",";
         strPairs += "iva=" + iva + ",";
-        strPairs += "id_usuario=" + id_usuario;
+        strPairs += "id_usuario=" + id_usuario + ",";
+        strPairs += "tiene_iva=" + tiene_iva;
         return strPairs;
     }
 
@@ -119,6 +126,7 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
         this.setFecha(oResultSet.getDate("fecha"));
         this.setIva(oResultSet.getInt("iva"));
         this.setId_usuario(oResultSet.getInt("id_usuario"));
+        this.setTiene_iva(oResultSet.getBoolean("tiene_iva"));
         if (expand > 0) {
             UsuarioSpecificBeanImplementation oUsuarioBean = new UsuarioSpecificBeanImplementation();
             UsuarioSpecificDaoImplementation oUsuarioDao = new UsuarioSpecificDaoImplementation(oConnection, oPuserBean_security, null);
@@ -129,5 +137,13 @@ public class PedidoSpecificBeanImplementation extends TableGenericBeanImplementa
         }
 
         return this;
+    }
+
+    public Boolean getTiene_iva() {
+        return tiene_iva;
+    }
+
+    public void setTiene_iva(Boolean tiene_iva) {
+        this.tiene_iva = tiene_iva;
     }
 }
